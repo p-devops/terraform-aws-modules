@@ -6,7 +6,7 @@ provider "aws" {
 }
 
 module "custom-vpc" {
-    source  = "app.terraform.io/kevindemos/custom-vpc/aws"
+    source  = "app.terraform.io/peter-demo/custom-vpc/aws"
 
     aws_region = var.aws_region
     tags = {
@@ -20,7 +20,7 @@ module "custom-vpc" {
 }
 
 module "custom-sg" {
-    source  = "app.terraform.io/kevindemos/custom-sg/aws"
+    source  = "app.terraform.io/peter-demo/custom-sg/aws"
 
     description = "my moduled security group"
     identifier = var.identifier
@@ -36,7 +36,7 @@ module "custom-sg" {
 }
 
 module "dynamodb" {
-    source  = "app.terraform.io/kevindemos/dynamodb/aws"
+    source  = "app.terraform.io/peter-demo/dynamodb/aws"
 
     identifier = var.identifier
     encryption = false
@@ -62,7 +62,7 @@ module "dynamodb" {
 }
 
 module "iam-role" {
-    source  = "app.terraform.io/kevindemos/iam-role/aws"
+    source  = "app.terraform.io/peter-demo/iam-role/aws"
 
     identifier = var.identifier
     actions = [
@@ -88,7 +88,7 @@ module "iam-role" {
 }
 
 module "my-nginx" {
-    source  = "app.terraform.io/kevindemos/my-nginx/aws"
+    source  = "app.terraform.io/peter-demo/my-nginx/aws"
 
     identifier = var.identifier
     key_pair = var.key_pair
@@ -107,7 +107,7 @@ module "my-nginx" {
 }
 
 module "my-bucket" {
-    source  = "app.terraform.io/kevindemos/my-bucket/aws"
+    source  = "app.terraform.io/peter-demo/my-bucket/aws"
 
     identifier = var.identifier
     tags = {
